@@ -9,10 +9,10 @@
       [34mle.com/[0m)
     [32m• [0mIt should.
 
-    [32;1m┃ [0mBlockquoted: [http://example.com/]
-    [32;1m┃ [0m([34mhttp://example.com/[0m)
+    [32;1m┃ [0;22mBlockquoted: [http://example.com/]
+    [32;1m┃ [0;22m([34mhttp://example.com/[0m)
     Auto-links should not occur here:
-    [44;3m<http://example.com/>[0m
+    [44;3m<http://example.com/>[0;23m
 
-    [32;1m┃ [0mor here: <http://example.com/>
+    [32;1m┃ [0;22mor here: <http://example.com/>
 

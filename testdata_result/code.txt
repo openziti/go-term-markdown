@@ -1,8 +1,8 @@
-    [44;3m<test a="[0m content of attribute [44;3m">[0m
+    [44;3m<test a="[0;23m content of attribute [44;3m">[0;23m
 
     Fix for backticks within HTML tag:
     [31m<span attr='`ticks`'>[0mlike
     this[31m</span>[0m
 
-    Here's how you put [44;3m`backticks`[0m in a
+    Here's how you put [44;3m`backticks`[0;23m in a
     code span.

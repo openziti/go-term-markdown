@@ -5,19 +5,19 @@
 
     Code:
 
-    [32;1m┃ [0mthis code block is indented by one
-    [32;1m┃ [0mtab
+    [32;1m┃ [0;22mthis code block is indented by one
+    [32;1m┃ [0;22mtab
 
     And:
 
-    [32;1m┃ [0m    this code block is indented by
-    [32;1m┃ [0mtwo tabs
+    [32;1m┃ [0;22m    this code block is indented by
+    [32;1m┃ [0;22mtwo tabs
 
     And:
 
-    [32;1m┃ [0m+    this is an example list item
-    [32;1m┃ [0m    indented with tabs
-    [32;1m┃ [0m
-    [32;1m┃ [0m+   this is an example list item
-    [32;1m┃ [0m    indented with spaces
+    [32;1m┃ [0;22m+    this is an example list item
+    [32;1m┃ [0;22m    indented with tabs
+    [32;1m┃ [0;22m
+    [32;1m┃ [0;22m+   this is an example list item
+    [32;1m┃ [0;22m    indented with spaces
 
