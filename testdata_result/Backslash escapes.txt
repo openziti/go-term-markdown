@@ -37,76 +37,76 @@
     These should not, because they occur
     within a code block:
 
-    [32;1m┃ [0mBackslash: \\
-    [32;1m┃ [0m
-    [32;1m┃ [0mBacktick: \`
-    [32;1m┃ [0m
-    [32;1m┃ [0mAsterisk: \*
-    [32;1m┃ [0m
-    [32;1m┃ [0mUnderscore: \_
-    [32;1m┃ [0m
-    [32;1m┃ [0mLeft brace: \{
-    [32;1m┃ [0m
-    [32;1m┃ [0mRight brace: \}
-    [32;1m┃ [0m
-    [32;1m┃ [0mLeft bracket: \[
-    [32;1m┃ [0m
-    [32;1m┃ [0mRight bracket: \]
-    [32;1m┃ [0m
-    [32;1m┃ [0mLeft paren: \(
-    [32;1m┃ [0m
-    [32;1m┃ [0mRight paren: \)
-    [32;1m┃ [0m
-    [32;1m┃ [0mGreater-than: \>
-    [32;1m┃ [0m
-    [32;1m┃ [0mHash: \#
-    [32;1m┃ [0m
-    [32;1m┃ [0mPeriod: \.
-    [32;1m┃ [0m
-    [32;1m┃ [0mBang: \!
-    [32;1m┃ [0m
-    [32;1m┃ [0mPlus: \+
-    [32;1m┃ [0m
-    [32;1m┃ [0mMinus: \-
-    [32;1m┃ [0m
-    [32;1m┃ [0mTilde: \~
+    [32;1m┃ [0;22mBackslash: \\
+    [32;1m┃ [0;22m
+    [32;1m┃ [0;22mBacktick: \`
+    [32;1m┃ [0;22m
+    [32;1m┃ [0;22mAsterisk: \*
+    [32;1m┃ [0;22m
+    [32;1m┃ [0;22mUnderscore: \_
+    [32;1m┃ [0;22m
+    [32;1m┃ [0;22mLeft brace: \{
+    [32;1m┃ [0;22m
+    [32;1m┃ [0;22mRight brace: \}
+    [32;1m┃ [0;22m
+    [32;1m┃ [0;22mLeft bracket: \[
+    [32;1m┃ [0;22m
+    [32;1m┃ [0;22mRight bracket: \]
+    [32;1m┃ [0;22m
+    [32;1m┃ [0;22mLeft paren: \(
+    [32;1m┃ [0;22m
+    [32;1m┃ [0;22mRight paren: \)
+    [32;1m┃ [0;22m
+    [32;1m┃ [0;22mGreater-than: \>
+    [32;1m┃ [0;22m
+    [32;1m┃ [0;22mHash: \#
+    [32;1m┃ [0;22m
+    [32;1m┃ [0;22mPeriod: \.
+    [32;1m┃ [0;22m
+    [32;1m┃ [0;22mBang: \!
+    [32;1m┃ [0;22m
+    [32;1m┃ [0;22mPlus: \+
+    [32;1m┃ [0;22m
+    [32;1m┃ [0;22mMinus: \-
+    [32;1m┃ [0;22m
+    [32;1m┃ [0;22mTilde: \~
 
     Nor should these, which occur in
     code spans:
 
-    Backslash: [44;3m\\[0m
+    Backslash: [44;3m\\[0;23m
 
-    Backtick: [44;3m\`[0m
+    Backtick: [44;3m\`[0;23m
 
-    Asterisk: [44;3m\*[0m
+    Asterisk: [44;3m\*[0;23m
 
-    Underscore: [44;3m\_[0m
+    Underscore: [44;3m\_[0;23m
 
-    Left brace: [44;3m\{[0m
+    Left brace: [44;3m\{[0;23m
 
-    Right brace: [44;3m\}[0m
+    Right brace: [44;3m\}[0;23m
 
-    Left bracket: [44;3m\[[0m
+    Left bracket: [44;3m\[[0;23m
 
-    Right bracket: [44;3m\][0m
+    Right bracket: [44;3m\][0;23m
 
-    Left paren: [44;3m\([0m
+    Left paren: [44;3m\([0;23m
 
-    Right paren: [44;3m\)[0m
+    Right paren: [44;3m\)[0;23m
 
-    Greater-than: [44;3m\>[0m
+    Greater-than: [44;3m\>[0;23m
 
-    Hash: [44;3m\#[0m
+    Hash: [44;3m\#[0;23m
 
-    Period: [44;3m\.[0m
+    Period: [44;3m\.[0;23m
 
-    Bang: [44;3m\![0m
+    Bang: [44;3m\![0;23m
 
-    Plus: [44;3m\+[0m
+    Plus: [44;3m\+[0;23m
 
-    Minus: [44;3m\-[0m
+    Minus: [44;3m\-[0;23m
 
-    Tilde: [44;3m\~[0m
+    Tilde: [44;3m\~[0;23m
 
     These should get escaped, even
     though they're matching pairs for
@@ -119,7 +119,7 @@
     `backticks`
 
     This is a code span with a literal
-    backslash-backtick sequence: [44;3m\`[0m
+    backslash-backtick sequence: [44;3m\`[0;23m
 
     This is a tag with unescaped
     backticks [31m<span[0m

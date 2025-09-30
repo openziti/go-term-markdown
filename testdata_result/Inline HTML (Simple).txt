@@ -4,19 +4,19 @@
 
     This should be a code block, though:
 
-    [32;1m┃ [0m<div>
-    [32;1m┃ [0m    foo
-    [32;1m┃ [0m</div>
+    [32;1m┃ [0;22m<div>
+    [32;1m┃ [0;22m    foo
+    [32;1m┃ [0;22m</div>
 
     As should this:
 
-    [32;1m┃ [0m<div>foo</div>
+    [32;1m┃ [0;22m<div>foo</div>
 
     Now, nested:
 
     foo
 
-    [32;1m┃ [0m</div>
+    [32;1m┃ [0;22m</div>
 
     [31m</div>[0m
 
@@ -26,14 +26,14 @@
 
     Code block:
 
-    [32;1m┃ [0m<!-- Comment -->
+    [32;1m┃ [0;22m<!-- Comment -->
 
     Just plain comment, with trailing
     spaces on the line:
 
     Code:
 
-    [32;1m┃ [0m<hr />
+    [32;1m┃ [0;22m<hr />
 
     Hr's:
 

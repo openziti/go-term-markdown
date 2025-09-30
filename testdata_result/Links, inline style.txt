@@ -11,4 +11,4 @@
     [URL and title]([34m/url/[0m title has
     spaces afterward).
 
-    [Empty]().
+    [Empty]([34m[0m).

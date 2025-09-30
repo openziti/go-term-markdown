@@ -3,13 +3,8 @@ package markdown
 import (
 	"bytes"
 	"fmt"
-	stdcolor "image/color"
 	"io"
-	"math"
-	"net/http"
-	"os"
 	"strings"
-	"time"
 	"unicode"
 
 	"github.com/MichaelMure/go-term-text"
@@ -17,14 +12,13 @@ import (
 	"github.com/alecthomas/chroma/formatters"
 	"github.com/alecthomas/chroma/lexers"
 	"github.com/alecthomas/chroma/styles"
-	"github.com/eliukblau/pixterm/pkg/ansimage"
 	"github.com/fatih/color"
 	md "github.com/gomarkdown/markdown"
 	"github.com/gomarkdown/markdown/ast"
 	"github.com/kyokomi/emoji/v2"
 	"golang.org/x/net/html"
 
-	htmlWalker "github.com/MichaelMure/go-term-markdown/html"
+	htmlWalker "github.com/openziti/go-term-markdown/html"
 )
 
 /*
@@ -101,11 +95,6 @@ type renderer struct {
 	// constant left padding to apply
 	leftPad int
 
-	// Dithering mode for ansimage
-	// Default is fine directly through a terminal
-	// DitheringWithBlocks is recommended if a terminal UI library is used
-	imageDithering ansimage.DitheringMode
-
 	// all the custom left paddings, without the fixed space from leftPad
 	padAccumulator []string
 
@@ -127,7 +116,7 @@ type renderer struct {
 	table *tableRenderer
 }
 
-/// NewRenderer creates a new instance of the console renderer
+// / NewRenderer creates a new instance of the console renderer
 func NewRenderer(lineWidth int, leftPad int, opts ...Options) *renderer {
 	r := &renderer{
 		lineWidth:       lineWidth,
@@ -888,53 +877,7 @@ func (r *renderer) renderImage(dest string, title string, lineWidth int) (result
 	dest = strings.ReplaceAll(dest, "\n", "")
 	dest = strings.TrimSpace(dest)
 
-	fallback := func() (string, bool) {
-		return fmt.Sprintf("![%s](%s)", title, Blue(dest)), false
-	}
-
-	reader, err := imageFromDestination(dest)
-	if err != nil {
-		return fallback()
-	}
-
-	x := lineWidth
-
-	if r.imageDithering == ansimage.DitheringWithChars || r.imageDithering == ansimage.DitheringWithBlocks {
-		// not sure why this is needed by ansimage
-		// x *= 4
-	}
-
-	img, err := ansimage.NewScaledFromReader(reader, math.MaxInt32, x,
-		stdcolor.Black, ansimage.ScaleModeFit, r.imageDithering)
-
-	if err != nil {
-		return fallback()
-	}
-
-	if title != "" {
-		return fmt.Sprintf("%s%s: %s", img.Render(), title, Blue(dest)), true
-	}
-	return fmt.Sprintf("%s%s", img.Render(), Blue(dest)), true
-}
-
-func imageFromDestination(dest string) (io.ReadCloser, error) {
-	client := http.Client{
-		Timeout: 5 * time.Second,
-	}
-
-	if strings.HasPrefix(dest, "http://") || strings.HasPrefix(dest, "https://") {
-		res, err := client.Get(dest)
-		if err != nil {
-			return nil, err
-		}
-		if res.StatusCode != http.StatusOK {
-			return nil, fmt.Errorf("http: %v", http.StatusText(res.StatusCode))
-		}
-
-		return res.Body, nil
-	}
-
-	return os.Open(dest)
+	return fmt.Sprintf("![%s](%s)", title, Blue(dest)), false
 }
 
 func removeLineBreak(text string) string {

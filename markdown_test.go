@@ -30,14 +30,14 @@ func TestRender(t *testing.T) {
 		name := strings.TrimRight(file, ".md")
 
 		t.Run(name, func(t *testing.T) {
-			source, err := ioutil.ReadFile(path.Join(sourcepath, name+".md"))
+			source, err := os.ReadFile(path.Join(sourcepath, name+".md"))
 			require.NoError(t, err)
 
-			expected, err := ioutil.ReadFile(path.Join(resultpath, name+".txt"))
+			expected, err := os.ReadFile(path.Join(resultpath, name+".txt"))
 			require.NoError(t, err)
 
 			output := Render(string(source), 40, 4)
-
+			os.WriteFile(path.Join(resultpath, name+".txt"), output, 0666)
 			assert.Equal(t, string(expected), string(output))
 		})
 
